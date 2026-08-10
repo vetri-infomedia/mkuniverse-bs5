@@ -642,6 +642,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Close mobile menu when any anchor link inside the collapse is clicked
+  const collapseContent = document.getElementById('navbarContent');
+  if (collapseContent) {
+    collapseContent.addEventListener('click', (e) => {
+      const anchor = e.target.closest('a[href^="#"]');
+      if (anchor && collapseContent.classList.contains('show')) {
+        const collapseInstance = bootstrap.Collapse.getInstance(collapseContent);
+        if (collapseInstance) {
+          collapseInstance.hide();
+        }
+      }
+    });
+  }
+
   // Initial Execution
   renderBooksGrid();
 });

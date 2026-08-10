@@ -3,37 +3,38 @@
   Custom Stylesheet built with Bootstrap 5 & Custom CSS Tokens
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
   --bs-primary: #1f1b18;
   --bs-primary-rgb: 31, 27, 24;
   --bs-secondary: #5f5e5b;
   --bs-secondary-rgb: 95, 94, 91;
-  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-body-font-family: "Inter", sans-serif;
   --bs-body-color: #1d1b16;
   --bs-body-bg: #fff8ef;
-  
+
   /* Custom Design System Tokens */
   --bg-surface: #fff8ef;
   --bg-surface-card: #f9f3ea;
   --bg-surface-container: #f3ede4;
   --bg-surface-high: #ede7de;
   --bg-surface-highest: #e8e2d9;
-  
+
   --color-primary: #1f1b18;
   --color-primary-light: #33302a;
   --color-accent-gold: #c4a47c;
   --color-accent-gold-dark: #9c7f5a;
   --color-accent-gold-light: #ffddb4;
-  
+
   --color-border: #e8e2d9;
   --color-border-variant: #d0c4bd;
   --color-text-muted: #7e756f;
   --color-text-dark: #1d1b16;
-  
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Global Reset & Base Styles */
@@ -87,6 +88,28 @@ body {
   border-color: var(--color-border) !important;
 }
 
+.py-6 {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.py-7 {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+@media (min-width: 992px) {
+  .py-lg-6 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .py-lg-7 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+}
+
 /* Ambient Subtle Texture Overlay */
 .bg-ambient-pattern {
   position: absolute;
@@ -133,7 +156,7 @@ body {
 }
 
 .navbar-novelia .nav-link.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 1rem;
@@ -293,7 +316,9 @@ body {
   transform-style: preserve-3d;
   transform: rotateY(-12deg) rotateX(4deg);
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: -20px 20px 30px rgba(31, 27, 24, 0.18), 0 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    -20px 20px 30px rgba(31, 27, 24, 0.18),
+    0 10px 15px rgba(0, 0, 0, 0.1);
   border-radius: 4px 8px 8px 4px;
 }
 
@@ -315,7 +340,12 @@ body {
   bottom: 0;
   left: 0;
   width: 12px;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.05) 80%, transparent);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.05) 80%,
+    transparent
+  );
   pointer-events: none;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
@@ -334,14 +364,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   z-index: 10;
   animation: floatBounce 4s ease-in-out infinite;
 }
 
 @keyframes floatBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* Author Portrait Section */
@@ -350,7 +385,7 @@ body {
 }
 
 .author-portrait-frame::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 16px;
   left: 16px;
@@ -433,7 +468,7 @@ body {
   left: 0;
   right: 0;
   padding: 1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
   display: flex;
   justify-content: center;
   gap: 0.75rem;
@@ -595,16 +630,83 @@ footer a:hover {
     padding-top: 5rem;
     padding-bottom: 4rem;
   }
-  
+
   .book-hero-wrapper {
     margin: 0 auto;
     max-width: 280px;
   }
-  
+
   .author-portrait-frame::before {
     top: 10px;
     left: 10px;
     right: -10px;
     bottom: -10px;
+  }
+
+  #events h2 {
+    font-size: 1.75rem;
+  }
+
+  .event-card {
+    padding: 1.25rem;
+  }
+
+  .event-card .d-flex {
+    min-width: 0;
+  }
+
+  .event-card .d-flex > div {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .event-card h4 {
+    font-size: 1.1rem;
+    overflow-wrap: break-word;
+  }
+
+  #events .p-4 {
+    padding: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .event-card {
+    padding: 1rem;
+  }
+
+  .event-card .btn {
+    width: 100%;
+  }
+
+  .event-card .d-flex {
+    gap: 0.75rem;
+  }
+
+  #events .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  #events h2 {
+    font-size: 1.5rem;
+  }
+
+  #events .section-badge {
+    font-size: 0.65rem;
+  }
+
+  #newsletter-form .btn {
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    padding: 0.75rem 1rem;
+  }
+
+  #newsletter-form .form-control {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
