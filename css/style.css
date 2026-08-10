@@ -143,6 +143,50 @@ body {
   border-radius: 2px;
 }
 
+.navbar-novelia .navbar-brand img {
+  max-width: 32px;
+  width: auto;
+}
+
+.navbar-novelia .navbar-toggler {
+  padding: 0.5rem;
+  border: none;
+  box-shadow: none;
+}
+
+.navbar-novelia .navbar-toggler i {
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+  display: block;
+  line-height: 1;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-novelia .navbar-collapse {
+    background-color: rgba(255, 248, 239, 0.98);
+    border-top: 1px solid rgba(232, 226, 217, 0.6);
+    padding: 1rem 0;
+    margin-top: 0.5rem;
+  }
+
+  .navbar-novelia .navbar-nav {
+    gap: 0.25rem;
+  }
+
+  .navbar-novelia .nav-link {
+    padding: 0.75rem 1rem !important;
+    text-align: center;
+  }
+
+  .navbar-novelia .nav-link.active::after {
+    display: none;
+  }
+
+  .navbar-container {
+    flex-wrap: wrap;
+  }
+}
+
 /* Custom Buttons */
 .btn-novelia-primary {
   background-color: var(--color-primary);

@@ -585,6 +585,63 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Custom ScrollSpy - more reliable than Bootstrap's native implementation
+  const navLinks = document.querySelectorAll('.navbar-novelia .nav-link');
+  const sections = [];
+  const sectionIds = [];
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#') && href.length > 1) {
+      const section = document.querySelector(href);
+      if (section) {
+        sections.push(section);
+        sectionIds.push(href.substring(1));
+      }
+    }
+  });
+
+  if (sections.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-90px 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    // Handle click on nav links for smooth scroll
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (target) {
+          const navHeight = document.querySelector('.navbar-novelia').offsetHeight;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  }
+
   // Initial Execution
   renderBooksGrid();
 });
