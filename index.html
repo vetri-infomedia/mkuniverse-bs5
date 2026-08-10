@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novelia | Aurelian Press - Author & Bookstore Portfolio</title>
+  <meta name="description" content="Award-winning author portfolio, published novels, short stories collection, and exclusive bookstore curated by Novelia Press.">
+  
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-navbar" data-bs-offset="100">
+
+  <!-- NAVBAR HEADER -->
+  <header>
+    <nav id="main-navbar" class="navbar navbar-expand-lg fixed-top navbar-novelia">
+      <div class="container navbar-container">
+        <!-- Brand Logo & Name -->
+        <a class="navbar-brand d-flex align-items-center gap-3" href="#home">
+          <img src="images/logo.png" alt="Novelia Logo" class="h-auto" style="max-height: 32px;">
+          <span class="font-serif fs-4 fw-bold text-dark tracking-tight">Novelia</span>
+        </a>
+
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler border-0 shadow-none p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2 text-dark"></i>
+        </button>
+
+        <!-- Navigation Links & User Actions -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Author</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#books">Bookstore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#stories">Short Stories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#events">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Right Interactive Utility Buttons -->
+          <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+            <!-- Wishlist Button -->
+            <button class="btn btn-novelia-outline border-0 px-2 position-relative" title="Wishlist">
+              <i class="bi bi-heart fs-5 text-dark"></i>
+              <span id="wishlist-count-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem;">0</span>
+            </button>
+
+            <!-- Cart Trigger Button -->
+            <button id="cart-trigger-btn" class="btn btn-novelia-outline border-0 px-2 position-relative" title="Shopping Cart">
+              <i class="bi bi-bag fs-5 text-dark"></i>
+              <span id="cart-count-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="font-size: 0.65rem;">0</span>
+            </button>
+
+            <!-- Buy Book CTA Button -->
+            <a href="#books" class="btn btn-novelia-primary d-none d-sm-inline-block rounded-pill ms-2">
+              Buy a Book
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="position-relative">
+    <div class="bg-ambient-pattern"></div>
+
+    <!-- HERO SECTION (#home) -->
+    <section id="home" class="hero-section d-flex align-items-center min-vh-100">
+      <div class="container position-relative z-1">
+        <div class="row align-items-center gy-5">
+          <!-- Hero Text -->
+          <div class="col-lg-6">
+            <div class="section-badge mb-4">
+              <span class="section-badge-dot"></span>
+              <span>Author • Writer • Storyteller</span>
+            </div>
+            <h1 class="font-serif display-3 fw-bold text-dark mb-4 lh-sm">
+              Stories That <br>
+              <span class="fst-italic fw-normal text-gold">Stay With You.</span>
+            </h1>
+            <p class="fs-5 text-muted mb-5 leading-relaxed" style="max-width: 520px;">
+              Award-winning author exploring the depths of human emotion, the mysteries of time, and the quiet moments that define our lives. Discover worlds woven from ink and imagination.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#books" class="btn btn-novelia-primary py-3 px-4 shadow-sm">
+                Explore My Books <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+              <a href="#about" class="btn btn-novelia-outline py-3 px-4">
+                About the Author
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero 3D Book Visual -->
+          <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end">
+            <div class="perspective-container w-100 d-flex justify-content-center">
+              <div class="book-hero-wrapper">
+                <img src="images/book_last_chapter.jpg" alt="The Last Chapter Book Cover" class="book-hero-img">
+                <div class="book-spine-shadow"></div>
+                <!-- Bestseller Floating Badge -->
+                <div class="bestseller-floating-badge">
+                  <span class="font-serif fw-bold h4 mb-0 text-dark">#1</span>
+                  <span class="font-sans text-uppercase text-muted" style="font-size: 0.55rem; letter-spacing: 0.1em;">Bestseller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><hr class="border-custom opacity-50 my-0"></div>
+
+    <!-- ABOUT AUTHOR SECTION (#about) -->
+    <section id="about" class="py-6 py-lg-7 position-relative">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <!-- Author Portrait -->
+          <div class="col-lg-5">
+            <div class="author-portrait-frame pe-3 pb-3">
+              <img src="images/author_portrait.jpg" alt="Author Portrait" class="img-fluid author-img w-100 shadow-sm">
+            </div>
+          </div>
+
+          <!-- Author Story & Stats -->
+          <div class="col-lg-7 ps-lg-5">
+            <div class="section-badge mb-3">
+              <span class="section-badge-dot"></span>
+              <span>The Author</span>
+            </div>
+            <h2 class="font-serif display-5 fw-semibold text-dark mb-4">
+              Words, Stories & <br>A Passion for Writing.
+            </h2>
+            
+            <div class="author-quote-box">
+              <p class="font-serif fs-4 fst-italic text-dark mb-0">
+                "Every story begins with a thought, and every thought deserves to be heard."
+              </p>
+            </div>
+
+            <p class="text-muted mb-4 fs-6 leading-relaxed">
+              For over two decades, I have been weaving narratives that explore the delicate intricacies of human connection. My journey began in a dusty attic filled with forgotten journals, sparking a lifelong obsession with the written word.
+            </p>
+            <p class="text-muted mb-5 fs-6 leading-relaxed">
+              Today, my work spans historical fiction, contemporary romance, and thought-provoking mysteries. I believe that a book is not just something you read, but a place you visit. My goal is to craft worlds so vivid, you'll feel the breeze on your face and hear the whispers in the shadows.
+            </p>
+
+            <!-- Stats Grid Counter -->
+            <div class="row text-center text-sm-start border-top border-custom pt-4 g-4">
+              <div class="col-4">
+                <div class="stat-box">
+                  <div class="stat-number">10<span class="stat-plus">+</span></div>
+                  <span class="font-sans text-uppercase text-muted fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.1em;">Published Books</span>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box">
+                  <div class="stat-number">25<span class="stat-plus">+</span></div>
+                  <span class="font-sans text-uppercase text-muted fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.1em;">Short Stories</span>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box">
+                  <div class="stat-number">10k<span class="stat-plus">+</span></div>
+                  <span class="font-sans text-uppercase text-muted fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.1em;">Loyal Readers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKSTORE CATALOG SECTION (#books) -->
+    <section id="books" class="py-6 py-lg-7 bg-surface-container border-top border-bottom border-custom">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3">
+          <div>
+            <div class="section-badge mb-2">
+              <span class="section-badge-dot"></span>
+              <span>Bookstore</span>
+            </div>
+            <h2 class="font-serif display-5 fw-semibold text-dark mb-0">
+              Curated Editions for <br>the Discerning Reader.
+            </h2>
+          </div>
+          <p class="text-muted max-w-sm mb-0">Discover hardcover special editions, signed paperbacks, and digital instant downloads.</p>
+        </div>
+
+        <!-- Filter Pills Bar -->
+        <div class="d-flex flex-wrap gap-2 mb-5">
+          <button class="filter-pill active" data-filter="all">All Books</button>
+          <button class="filter-pill" data-filter="contemporary">Contemporary</button>
+          <button class="filter-pill" data-filter="romance">Romance</button>
+          <button class="filter-pill" data-filter="inspirational">Inspirational</button>
+          <button class="filter-pill" data-filter="mystery">Mystery</button>
+          <button class="filter-pill" data-filter="historical">Historical</button>
+        </div>
+
+        <!-- Dynamic Books Grid -->
+        <div id="books-grid" class="row gy-4 mb-6">
+          <!-- Rendered via js/main.js -->
+        </div>
+
+        <!-- Featured Book Highlight Banner -->
+        <div class="bg-surface-card rounded-4 p-4 p-lg-5 border border-custom shadow-sm position-relative overflow-hidden mt-5">
+          <div class="row align-items-center gy-4">
+            <div class="col-lg-4 text-center">
+              <img src="images/book_last_chapter.jpg" alt="The Last Chapter Special Edition" class="img-fluid rounded shadow-lg" style="max-width: 220px;">
+            </div>
+            <div class="col-lg-8">
+              <span class="badge bg-gold-subtle text-gold text-uppercase px-3 py-2 rounded-pill fw-semibold mb-3" style="font-size: 0.7rem; letter-spacing: 0.1em;">
+                Special Anniversary Edition
+              </span>
+              <h3 class="font-serif display-6 fw-bold text-dark mb-2">The Last Chapter</h3>
+              <div class="d-flex align-items-center gap-2 text-gold mb-3">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <span class="text-muted font-sans fs-6 ms-2">(4.9 / 5 based on 2,420+ reviews)</span>
+              </div>
+              <p class="text-muted fs-6 mb-4">
+                Experience the novel that redefined contemporary fiction. This special edition includes a new foreword by the author, deleted chapters, signed bookplate, and beautiful interior illustrations.
+              </p>
+              <div class="d-flex flex-wrap gap-3">
+                <button class="btn btn-novelia-primary py-3 px-4 btn-add-cart" data-book-id="book-1">
+                  Pre-Order Collector’s Edition - ₹799
+                </button>
+                <button class="btn btn-novelia-gold py-3 px-4 btn-open-reader" data-story-id="story-1">
+                  <i class="bi bi-book me-2"></i> Read Sample Excerpt
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHORT STORIES & READINGS SECTION (#stories) -->
+    <section id="stories" class="py-6 py-lg-7">
+      <div class="container">
+        <div class="text-center max-w-2xl mx-auto mb-5">
+          <div class="section-badge mb-2 justify-content-center">
+            <span class="section-badge-dot"></span>
+            <span>Short Stories & Essays</span>
+          </div>
+          <h2 class="font-serif display-5 fw-semibold text-dark mb-3">
+            Readings for Quiet Hours.
+          </h2>
+          <p class="text-muted">A collection of standalone short stories, reflections, and literary essays available to read online.</p>
+        </div>
+
+        <div class="row gy-4">
+          <!-- Story Card 1 -->
+          <div class="col-md-4">
+            <div class="story-card">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge bg-surface-high text-muted font-sans text-uppercase px-2 py-1" style="font-size: 0.65rem;">Historical</span>
+                  <small class="text-muted"><i class="bi bi-clock me-1"></i> 6 min read</small>
+                </div>
+                <h3 class="font-serif h4 text-dark mb-3">The Clockmaker’s Secret</h3>
+                <p class="text-muted fs-6 mb-4">
+                  In the quiet town of Prague, an aging horologist guards a pocket watch that doesn’t measure hours, but moments of true clarity...
+                </p>
+              </div>
+              <button class="btn btn-novelia-outline w-100 btn-open-reader" data-story-id="story-1">
+                Read Full Story <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Story Card 2 -->
+          <div class="col-md-4">
+            <div class="story-card">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge bg-surface-high text-muted font-sans text-uppercase px-2 py-1" style="font-size: 0.65rem;">Contemporary</span>
+                  <small class="text-muted"><i class="bi bi-clock me-1"></i> 4 min read</small>
+                </div>
+                <h3 class="font-serif h4 text-dark mb-3">Autumn Leaves in Kyoto</h3>
+                <p class="text-muted fs-6 mb-4">
+                  A chance meeting at a centuries-old tea house brings together two strangers running from their pasts in search of healing...
+                </p>
+              </div>
+              <button class="btn btn-novelia-outline w-100 btn-open-reader" data-story-id="story-2">
+                Read Full Story <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Story Card 3 -->
+          <div class="col-md-4">
+            <div class="story-card">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge bg-surface-high text-muted font-sans text-uppercase px-2 py-1" style="font-size: 0.65rem;">Inspirational</span>
+                  <small class="text-muted"><i class="bi bi-clock me-1"></i> 5 min read</small>
+                </div>
+                <h3 class="font-serif h4 text-dark mb-3">A Letter to Tomorrow</h3>
+                <p class="text-muted fs-6 mb-4">
+                  Found inside an antique writing bureau, a forgotten letter written in 1944 reveals a timeless message of hope and courage...
+                </p>
+              </div>
+              <button class="btn btn-novelia-outline w-100 btn-open-reader" data-story-id="story-3">
+                Read Full Story <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPCOMING EVENTS SECTION (#events) -->
+    <section id="events" class="py-6 py-lg-7 bg-surface-container border-top border-bottom border-custom">
+      <div class="container">
+        <div class="row gy-5 align-items-center">
+          <div class="col-lg-5">
+            <div class="section-badge mb-2">
+              <span class="section-badge-dot"></span>
+              <span>Events & Tour</span>
+            </div>
+            <h2 class="font-serif display-5 fw-semibold text-dark mb-4">
+              Upcoming Author Signings & Virtual Talks.
+            </h2>
+            <p class="text-muted mb-4">
+              Join me for live readings, book signing tours, and interactive Q&A discussions about literature, writing craftsmanship, and publishing.
+            </p>
+            <div class="p-4 bg-surface-card rounded border border-custom">
+              <h5 class="font-serif text-dark mb-2"><i class="bi bi-chat-quote me-2 text-gold"></i>Book Club Requests</h5>
+              <p class="text-muted small mb-0">Is your book club reading one of my novels? Request a 15-minute virtual guest appearance by sending a message through the contact form below.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-7 ps-lg-5">
+            <div class="d-flex flex-col gap-3">
+              <!-- Event Item 1 -->
+              <div class="event-card mb-3">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
+                  <div>
+                    <span class="badge bg-dark text-uppercase mb-2 font-sans" style="font-size: 0.6rem;">Virtual Webinar</span>
+                    <h4 class="font-serif h5 text-dark mb-1">International Writer’s Summit Q&A</h4>
+                    <p class="text-muted small mb-0"><i class="bi bi-calendar-event me-1"></i> August 25, 2026 • 6:00 PM EST (Online Zoom)</p>
+                  </div>
+                  <button class="btn btn-novelia-outline btn-sm px-3" onclick="alert('Ticket reserved! Link emailed to attendee.')">Register</button>
+                </div>
+              </div>
+
+              <!-- Event Item 2 -->
+              <div class="event-card mb-3">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
+                  <div>
+                    <span class="badge bg-gold-subtle text-gold text-uppercase mb-2 font-sans fw-bold" style="font-size: 0.6rem;">In-Person Signing</span>
+                    <h4 class="font-serif h5 text-dark mb-1">London Flagship Bookstore Tour</h4>
+                    <p class="text-muted small mb-0"><i class="bi bi-geo-alt me-1"></i> September 14, 2026 • Piccadilly, London</p>
+                  </div>
+                  <button class="btn btn-novelia-outline btn-sm px-3" onclick="alert('Ticket reserved! Link emailed to attendee.')">RSVP Free</button>
+                </div>
+              </div>
+
+              <!-- Event Item 3 -->
+              <div class="event-card">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
+                  <div>
+                    <span class="badge bg-dark text-uppercase mb-2 font-sans" style="font-size: 0.6rem;">Live Workshop</span>
+                    <h4 class="font-serif h5 text-dark mb-1">Crafting Unforgettable Characters Workshop</h4>
+                    <p class="text-muted small mb-0"><i class="bi bi-calendar-event me-1"></i> October 02, 2026 • NYC Writers Guild</p>
+                  </div>
+                  <button class="btn btn-novelia-outline btn-sm px-3" onclick="alert('Ticket reserved! Link emailed to attendee.')">Book Seat</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER READER'S CIRCLE SECTION -->
+    <section class="py-6 bg-dark text-white">
+      <div class="container text-center">
+        <div class="max-w-xl mx-auto">
+          <i class="bi bi-envelope-paper display-4 text-gold mb-3 d-inline-block"></i>
+          <h2 class="font-serif display-6 fw-bold mb-3 text-white">Join the Novelia Reader’s Circle</h2>
+          <p class="text-light opacity-75 mb-4">
+            Receive exclusive monthly short stories, behind-the-scenes writing journals, early access to new releases, and signed book giveaways.
+          </p>
+          
+          <form id="newsletter-form" class="row g-2 justify-content-center max-w-md mx-auto">
+            <div class="col-8">
+              <input type="email" id="newsletter-email" class="form-control form-control-lg bg-surface text-dark border-0 rounded-pill px-4 fs-6" placeholder="Enter your email address" required>
+            </div>
+            <div class="col-4">
+              <button type="submit" class="btn btn-novelia-gold btn-lg w-100 rounded-pill fs-6 px-3">Subscribe</button>
+            </div>
+          </form>
+          <small class="text-muted mt-3 d-block">We respect your inbox privacy. Unsubscribe at any time.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION (#contact) -->
+    <section id="contact" class="py-6 py-lg-7">
+      <div class="container">
+        <div class="row gy-5">
+          <!-- Contact Info -->
+          <div class="col-lg-5">
+            <div class="section-badge mb-2">
+              <span class="section-badge-dot"></span>
+              <span>Get In Touch</span>
+            </div>
+            <h2 class="font-serif display-5 fw-semibold text-dark mb-4">
+              Connect With the Author.
+            </h2>
+            <p class="text-muted mb-5 fs-6">
+              Whether you are a reader with thoughts on a novel, a literary agent, or press seeking interview inquiries, I would love to hear from you.
+            </p>
+
+            <div class="d-flex flex-column gap-4">
+              <div class="d-flex align-items-start gap-3">
+                <div class="btn-icon-circle bg-surface-high">
+                  <i class="bi bi-building"></i>
+                </div>
+                <div>
+                  <h6 class="font-serif mb-1 text-dark">Literary Representation</h6>
+                  <p class="text-muted small mb-0">Aurelian Press & Agency, New York / London</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3">
+                <div class="btn-icon-circle bg-surface-high">
+                  <i class="bi bi-envelope"></i>
+                </div>
+                <div>
+                  <h6 class="font-serif mb-1 text-dark">Direct Email</h6>
+                  <p class="text-muted small mb-0">contact@novelia-author.com</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3">
+                <div class="btn-icon-circle bg-surface-high">
+                  <i class="bi bi-share"></i>
+                </div>
+                <div>
+                  <h6 class="font-serif mb-1 text-dark">Social Media</h6>
+                  <div class="d-flex gap-3 mt-1">
+                    <a href="#" class="text-muted hover-dark"><i class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="#" class="text-muted hover-dark"><i class="bi bi-instagram fs-5"></i></a>
+                    <a href="#" class="text-muted hover-dark"><i class="bi bi-goodreads fs-5"></i></a>
+                    <a href="#" class="text-muted hover-dark"><i class="bi bi-linkedin fs-5"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="col-lg-7 ps-lg-5">
+            <div class="bg-surface-card p-4 p-lg-5 rounded-4 border border-custom shadow-sm">
+              <h4 class="font-serif text-dark mb-4">Send a Message</h4>
+              
+              <form id="contact-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="contact-name" class="form-label font-sans small text-uppercase fw-semibold text-muted">Your Name</label>
+                    <input type="text" id="contact-name" class="form-control bg-surface border-custom py-2" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contact-email" class="form-label font-sans small text-uppercase fw-semibold text-muted">Your Email</label>
+                    <input type="email" id="contact-email" class="form-control bg-surface border-custom py-2" required>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contact-subject" class="form-label font-sans small text-uppercase fw-semibold text-muted">Inquiry Subject</label>
+                    <select id="contact-subject" class="form-select bg-surface border-custom py-2">
+                      <option value="fan">Reader Fan Mail</option>
+                      <option value="press">Media & Press Interview</option>
+                      <option value="club">Book Club Guest Request</option>
+                      <option value="order">Book Order Support</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contact-message" class="form-label font-sans small text-uppercase fw-semibold text-muted">Message</label>
+                    <textarea id="contact-message" rows="4" class="form-control bg-surface border-custom py-2" placeholder="Write your message here..." required></textarea>
+                  </div>
+
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-novelia-primary w-100 py-3 mt-2">
+                      Send Message <i class="bi bi-send ms-2"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row gy-4 mb-5">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="images/logo.png" alt="Novelia Logo" style="height: 24px;" class="opacity-75">
+            <span class="font-serif h4 mb-0 text-dark">Novelia</span>
+          </div>
+          <p class="text-muted max-w-sm">
+            Curating timeless literary experiences for the discerning reader. From ink to digital, we preserve the craft of storytelling.
+          </p>
+        </div>
+
+        <div class="col-md-3">
+          <h6 class="font-sans text-uppercase text-dark fw-bold small mb-3" style="letter-spacing: 0.1em;">Quick Links</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">The Author</a></li>
+            <li><a href="#books">Bookstore Catalog</a></li>
+            <li><a href="#stories">Short Stories</a></li>
+            <li><a href="#events">Upcoming Events</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h6 class="font-sans text-uppercase text-dark fw-bold small mb-3" style="letter-spacing: 0.1em;">Legal & Info</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Copyright Notice</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-top border-custom pt-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 small text-muted">
+        <p class="mb-0">© 2026 Novelia Press. All rights reserved.</p>
+        <a href="#home" class="text-muted text-decoration-none"><i class="bi bi-arrow-up-circle fs-5 me-1"></i> Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+
+  <!-- 1. BOOK QUICK VIEW / DETAILS MODAL -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg bg-surface">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-lg-5">
+          <div class="row gy-4 align-items-center">
+            <div class="col-md-5 text-center">
+              <img id="qv-book-cover" src="" alt="Book Cover" class="img-fluid rounded shadow-md" style="max-height: 320px; object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <span id="qv-book-genre" class="badge bg-gold-subtle text-gold text-uppercase px-2 py-1 mb-2 font-sans" style="font-size: 0.65rem;">Genre</span>
+              <h3 id="qv-book-title" class="font-serif display-6 text-dark mb-2">Book Title</h3>
+              <div class="d-flex align-items-center gap-2 text-gold mb-3" style="font-size: 0.85rem;">
+                <i class="bi bi-star-fill"></i>
+                <span id="qv-book-rating" class="fw-semibold text-dark">4.9 (120 reviews)</span>
+              </div>
+              <h4 id="qv-book-price" class="font-sans fw-bold text-dark mb-3">₹0</h4>
+              <p id="qv-book-summary" class="text-muted fs-6 mb-4">Book summary text...</p>
+              
+              <ul class="list-unstyled text-muted small mb-4">
+                <li><strong>Format:</strong> <span id="qv-book-format">Hardcover</span></li>
+                <li><strong>Pages:</strong> <span id="qv-book-pages">400 pages</span></li>
+                <li><strong>ISBN:</strong> <span id="qv-book-isbn">978-0-00000-0</span></li>
+              </ul>
+
+              <button id="qv-add-to-cart-btn" class="btn btn-novelia-primary py-3 px-4 w-100">
+                <i class="bi bi-bag-plus me-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SHORT STORY & EXCERPT READER MODAL -->
+  <div class="modal fade" id="readerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow-lg bg-surface">
+        <div class="modal-header border-bottom border-custom bg-surface-container py-3">
+          <div class="d-flex align-items-center gap-2">
+            <span class="font-serif fw-bold text-dark">Novelia Reader</span>
+          </div>
+          
+          <!-- Reader Custom Controls -->
+          <div class="d-flex align-items-center gap-3">
+            <div class="btn-group btn-group-sm" role="group">
+              <button id="font-decrease" class="btn btn-outline-secondary" title="Decrease Font Size">A-</button>
+              <button id="font-increase" class="btn btn-outline-secondary" title="Increase Font Size">A+</button>
+            </div>
+            
+            <div class="btn-group btn-group-sm" role="group">
+              <button class="btn btn-outline-secondary" data-reader-theme="ivory" title="Ivory Theme">Ivory</button>
+              <button class="btn btn-outline-secondary" data-reader-theme="sepia" title="Sepia Theme">Sepia</button>
+              <button class="btn btn-outline-secondary" data-reader-theme="dark" title="Dark Theme">Dark</button>
+            </div>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        
+        <div class="modal-body reader-scrollable p-4 p-md-5">
+          <div id="reader-content-body" class="reader-modal-body">
+            <!-- Populated dynamically by js/main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SHOPPING CART MODAL -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg bg-surface">
+        <div class="modal-header border-bottom border-custom">
+          <h5 class="modal-title font-serif text-dark"><i class="bi bi-bag me-2"></i> Your Bookstore Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div id="cart-items-container">
+            <!-- Items rendered via js/main.js -->
+          </div>
+        </div>
+        <div class="modal-footer border-top border-custom d-flex justify-content-between">
+          <div>
+            <span class="text-muted small d-block">Total Amount:</span>
+            <span id="cart-total-price" class="h4 font-serif text-dark mb-0 fw-bold">₹0</span>
+          </div>
+          <button id="btn-checkout" class="btn btn-novelia-primary py-2 px-4">
+            Checkout Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JavaScript Bundle with Popper CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <!-- Custom JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>

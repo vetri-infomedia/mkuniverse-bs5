@@ -1,0 +1,566 @@
+/* 
+  Novelia - Author & Bookstore Portfolio
+  Custom Stylesheet built with Bootstrap 5 & Custom CSS Tokens
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bs-primary: #1f1b18;
+  --bs-primary-rgb: 31, 27, 24;
+  --bs-secondary: #5f5e5b;
+  --bs-secondary-rgb: 95, 94, 91;
+  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-body-color: #1d1b16;
+  --bs-body-bg: #fff8ef;
+  
+  /* Custom Design System Tokens */
+  --bg-surface: #fff8ef;
+  --bg-surface-card: #f9f3ea;
+  --bg-surface-container: #f3ede4;
+  --bg-surface-high: #ede7de;
+  --bg-surface-highest: #e8e2d9;
+  
+  --color-primary: #1f1b18;
+  --color-primary-light: #33302a;
+  --color-accent-gold: #c4a47c;
+  --color-accent-gold-dark: #9c7f5a;
+  --color-accent-gold-light: #ffddb4;
+  
+  --color-border: #e8e2d9;
+  --color-border-variant: #d0c4bd;
+  --color-text-muted: #7e756f;
+  --color-text-dark: #1d1b16;
+  
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Global Reset & Base Styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-surface);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typography Classes */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.tracking-widest-lg {
+  letter-spacing: 0.15em;
+}
+
+.text-gold {
+  color: var(--color-accent-gold-dark) !important;
+}
+
+.bg-gold-subtle {
+  background-color: rgba(196, 164, 124, 0.15) !important;
+}
+
+.bg-surface-card {
+  background-color: var(--bg-surface-card) !important;
+}
+
+.bg-surface-container {
+  background-color: var(--bg-surface-container) !important;
+}
+
+.bg-surface-high {
+  background-color: var(--bg-surface-high) !important;
+}
+
+.border-custom {
+  border-color: var(--color-border) !important;
+}
+
+/* Ambient Subtle Texture Overlay */
+.bg-ambient-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23fff8ef'/%3E%3Cpath d='M0 0h4v1H0zM0 2h4v1H0z' fill='%23635d59' fill-opacity='0.08'/%3E%3C/svg%3E");
+}
+
+/* Custom Navigation Bar */
+.navbar-novelia {
+  background-color: rgba(255, 248, 239, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232, 226, 217, 0.6);
+  transition: all 0.3s ease;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.navbar-novelia.scrolled {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 248, 239, 0.95);
+}
+
+.navbar-novelia .nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  padding: 0.5rem 1rem !important;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.navbar-novelia .nav-link:hover,
+.navbar-novelia .nav-link.active {
+  color: var(--color-primary);
+}
+
+.navbar-novelia .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background-color: var(--color-accent-gold-dark);
+  border-radius: 2px;
+}
+
+/* Custom Buttons */
+.btn-novelia-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: 1px solid var(--color-primary);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-novelia-primary:hover {
+  background-color: var(--color-primary-light);
+  color: #ffffff;
+  border-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(31, 27, 24, 0.2);
+}
+
+.btn-novelia-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border-variant);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-novelia-outline:hover {
+  background-color: var(--bg-surface-container);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-novelia-gold {
+  background-color: var(--color-accent-gold);
+  color: #1f1b18;
+  border: 1px solid var(--color-accent-gold);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-novelia-gold:hover {
+  background-color: var(--color-accent-gold-dark);
+  color: #ffffff;
+  border-color: var(--color-accent-gold-dark);
+  box-shadow: 0 6px 16px rgba(196, 164, 124, 0.3);
+}
+
+/* Section Decorative Elements */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+}
+
+.section-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent-gold-dark);
+}
+
+/* Hero Section */
+.hero-section {
+  padding-top: 7rem;
+  padding-bottom: 6rem;
+  position: relative;
+}
+
+/* 3D Book Visual Effect */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.book-hero-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 3/4;
+  transform-style: preserve-3d;
+  transform: rotateY(-12deg) rotateX(4deg);
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: -20px 20px 30px rgba(31, 27, 24, 0.18), 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 4px 8px 8px 4px;
+}
+
+.book-hero-wrapper:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.03);
+  box-shadow: 0 25px 40px rgba(31, 27, 24, 0.22);
+}
+
+.book-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px 6px 6px 2px;
+}
+
+.book-spine-shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 12px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.05) 80%, transparent);
+  pointer-events: none;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.bestseller-floating-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  z-index: 10;
+  animation: floatBounce 4s ease-in-out infinite;
+}
+
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Author Portrait Section */
+.author-portrait-frame {
+  position: relative;
+}
+
+.author-portrait-frame::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: -16px;
+  bottom: -16px;
+  border: 1px solid var(--color-border-variant);
+  border-radius: 4px;
+  z-index: 0;
+  transition: transform 0.4s ease;
+}
+
+.author-portrait-frame:hover::before {
+  transform: translate(-6px, -6px);
+}
+
+.author-img {
+  position: relative;
+  z-index: 1;
+  border-radius: 4px;
+  filter: grayscale(15%);
+  transition: filter 0.5s ease;
+}
+
+.author-portrait-frame:hover .author-img {
+  filter: grayscale(0%);
+}
+
+.author-quote-box {
+  border-left: 3px solid var(--color-accent-gold-dark);
+  padding-left: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Book Catalog Grid Cards */
+.book-card {
+  background-color: var(--bg-surface);
+  border: 1px solid rgba(208, 196, 189, 0.4);
+  border-radius: 6px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(31, 27, 24, 0.1);
+  border-color: var(--color-accent-gold);
+}
+
+.book-cover-container {
+  background-color: var(--bg-surface-container);
+  padding: 2.5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-cover-img {
+  max-width: 170px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.5s ease;
+}
+
+.book-card:hover .book-cover-img {
+  transform: scale(1.05);
+}
+
+.book-actions-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.book-card:hover .book-actions-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  color: var(--color-primary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-icon-circle:hover {
+  background-color: var(--color-accent-gold);
+  color: #1f1b18;
+  transform: scale(1.1);
+}
+
+/* Category Filter Pills */
+.filter-pill {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  background-color: var(--bg-surface-container);
+  color: var(--color-text-muted);
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* Short Stories Cards */
+.story-card {
+  background-color: var(--bg-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.story-card:hover {
+  background-color: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+  border-color: var(--color-accent-gold);
+  transform: translateY(-4px);
+}
+
+/* Reading Reader Modal Custom Styling */
+.reader-modal-body {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--color-text-dark);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.reader-modal-body.theme-sepia {
+  background-color: #fbf0d9;
+  color: #5f4b32;
+}
+
+.reader-modal-body.theme-dark {
+  background-color: #1a1816;
+  color: #e5ded5;
+}
+
+/* Custom Scrollbar for Reader */
+.reader-scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+.reader-scrollable::-webkit-scrollbar-thumb {
+  background-color: var(--color-border-variant);
+  border-radius: 3px;
+}
+
+/* Counter & Stats Box */
+.stat-box {
+  padding: 1rem 0;
+}
+
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.stat-plus {
+  color: var(--color-accent-gold-dark);
+}
+
+/* Event Card */
+.event-card {
+  border-left: 3px solid var(--color-accent-gold);
+  background-color: var(--bg-surface-card);
+  padding: 1.5rem;
+  border-radius: 0 6px 6px 0;
+  transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateX(6px);
+}
+
+/* Toast styling */
+.toast-container {
+  z-index: 1090;
+}
+
+/* Footer Styling */
+footer {
+  background-color: var(--bg-surface-container);
+  border-top: 1px solid var(--color-border);
+}
+
+footer a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--color-primary);
+}
+
+/* Responsive Touchups */
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+  
+  .book-hero-wrapper {
+    margin: 0 auto;
+    max-width: 280px;
+  }
+  
+  .author-portrait-frame::before {
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+  }
+}
