@@ -6,31 +6,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --bs-primary: #1f1b18;
-  --bs-primary-rgb: 31, 27, 24;
-  --bs-secondary: #5f5e5b;
-  --bs-secondary-rgb: 95, 94, 91;
+  --bs-primary: #2b1240;
+  --bs-primary-rgb: 43, 18, 64;
+  --bs-secondary: #6b5575;
+  --bs-secondary-rgb: 107, 85, 117;
   --bs-body-font-family: "Inter", sans-serif;
-  --bs-body-color: #1d1b16;
-  --bs-body-bg: #fff8ef;
+  --bs-body-color: #2b1240;
+  --bs-body-bg: #f5f0f9;
 
-  /* Custom Design System Tokens */
-  --bg-surface: #fff8ef;
-  --bg-surface-card: #f9f3ea;
-  --bg-surface-container: #f3ede4;
-  --bg-surface-high: #ede7de;
-  --bg-surface-highest: #e8e2d9;
+  /* Custom Design System Tokens (Purple Theme from banner) */
+  --bg-surface: #f5f0f9;
+  --bg-surface-card: #f0eaf5;
+  --bg-surface-container: #ebe3f0;
+  --bg-surface-high: #e5dced;
+  --bg-surface-highest: #dfd5e9;
 
-  --color-primary: #1f1b18;
-  --color-primary-light: #33302a;
+  --color-primary: #2b1240;
+  --color-primary-light: #3d1d55;
   --color-accent-gold: #c4a47c;
   --color-accent-gold-dark: #9c7f5a;
   --color-accent-gold-light: #ffddb4;
 
-  --color-border: #e8e2d9;
-  --color-border-variant: #d0c4bd;
-  --color-text-muted: #7e756f;
-  --color-text-dark: #1d1b16;
+  --color-border: #d9cfe5;
+  --color-border-variant: #c5b8d4;
+  --color-text-muted: #6b5575;
+  --color-text-dark: #1e0d2e;
 
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans:
@@ -117,15 +117,15 @@ body {
   pointer-events: none;
   opacity: 0.25;
   mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23fff8ef'/%3E%3Cpath d='M0 0h4v1H0zM0 2h4v1H0z' fill='%23635d59' fill-opacity='0.08'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23f5f0f9'/%3E%3Cpath d='M0 0h4v1H0zM0 2h4v1H0z' fill='%23472050' fill-opacity='0.08'/%3E%3C/svg%3E");
 }
 
 /* Custom Navigation Bar */
 .navbar-novelia {
-  background-color: rgba(255, 248, 239, 0.85);
+  background-color: rgba(245, 240, 249, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(232, 226, 217, 0.6);
+  border-bottom: 1px solid rgba(197, 184, 212, 0.6);
   transition: all 0.3s ease;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -134,8 +134,8 @@ body {
 .navbar-novelia.scrolled {
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  background-color: rgba(255, 248, 239, 0.95);
+  box-shadow: 0 4px 20px rgba(43, 18, 64, 0.08);
+  background-color: rgba(245, 240, 249, 0.95);
 }
 
 .navbar-novelia .nav-link {
@@ -162,7 +162,7 @@ body {
   left: 1rem;
   right: 1rem;
   height: 2px;
-  background-color: var(--color-accent-gold-dark);
+  background-color: var(--color-primary);
   border-radius: 2px;
 }
 
@@ -186,8 +186,8 @@ body {
 
 @media (max-width: 991.98px) {
   .navbar-novelia .navbar-collapse {
-    background-color: rgba(255, 248, 239, 0.98);
-    border-top: 1px solid rgba(232, 226, 217, 0.6);
+    background-color: rgba(245, 240, 249, 0.98);
+    border-top: 1px solid rgba(197, 184, 212, 0.6);
     padding: 1rem 0;
     margin-top: 0.5rem;
   }
@@ -233,7 +233,7 @@ body {
   color: #ffffff;
   border-color: var(--color-primary-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(31, 27, 24, 0.2);
+  box-shadow: 0 6px 16px rgba(43, 18, 64, 0.25);
 }
 
 .btn-novelia-outline {
@@ -258,7 +258,7 @@ body {
 
 .btn-novelia-gold {
   background-color: var(--color-accent-gold);
-  color: #1f1b18;
+  color: #1e0d2e;
   border: 1px solid var(--color-accent-gold);
   font-family: var(--font-sans);
   font-size: 0.75rem;
@@ -293,7 +293,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--color-accent-gold-dark);
+  background-color: var(--color-primary);
 }
 
 /* Hero Section */
@@ -317,14 +317,14 @@ body {
   transform: rotateY(-12deg) rotateX(4deg);
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow:
-    -20px 20px 30px rgba(31, 27, 24, 0.18),
-    0 10px 15px rgba(0, 0, 0, 0.1);
+    -20px 20px 30px rgba(43, 18, 64, 0.22),
+    0 10px 15px rgba(43, 18, 64, 0.12);
   border-radius: 4px 8px 8px 4px;
 }
 
 .book-hero-wrapper:hover {
   transform: rotateY(0deg) rotateX(0deg) scale(1.03);
-  box-shadow: 0 25px 40px rgba(31, 27, 24, 0.22);
+  box-shadow: 0 25px 40px rgba(43, 18, 64, 0.28);
 }
 
 .book-hero-img {
@@ -414,7 +414,7 @@ body {
 }
 
 .author-quote-box {
-  border-left: 3px solid var(--color-accent-gold-dark);
+  border-left: 3px solid var(--color-primary);
   padding-left: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -423,7 +423,7 @@ body {
 /* Book Catalog Grid Cards */
 .book-card {
   background-color: var(--bg-surface);
-  border: 1px solid rgba(208, 196, 189, 0.4);
+  border: 1px solid rgba(197, 184, 212, 0.4);
   border-radius: 6px;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   height: 100%;
@@ -433,8 +433,8 @@ body {
 
 .book-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 30px rgba(31, 27, 24, 0.1);
-  border-color: var(--color-accent-gold);
+  box-shadow: 0 16px 30px rgba(43, 18, 64, 0.12);
+  border-color: var(--color-primary);
 }
 
 .book-cover-container {
@@ -496,8 +496,8 @@ body {
 }
 
 .btn-icon-circle:hover {
-  background-color: var(--color-accent-gold);
-  color: #1f1b18;
+  background-color: var(--color-primary);
+  color: #ffffff;
   transform: scale(1.1);
 }
 
@@ -538,8 +538,8 @@ body {
 
 .story-card:hover {
   background-color: #ffffff;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
-  border-color: var(--color-accent-gold);
+  box-shadow: 0 12px 28px rgba(43, 18, 64, 0.1);
+  border-color: var(--color-primary);
   transform: translateY(-4px);
 }
 
@@ -560,8 +560,8 @@ body {
 }
 
 .reader-modal-body.theme-dark {
-  background-color: #1a1816;
-  color: #e5ded5;
+  background-color: #1e0d2e;
+  color: #e8ddf5;
 }
 
 /* Custom Scrollbar for Reader */
@@ -587,12 +587,12 @@ body {
 }
 
 .stat-plus {
-  color: var(--color-accent-gold-dark);
+  color: var(--color-primary);
 }
 
 /* Event Card */
 .event-card {
-  border-left: 3px solid var(--color-accent-gold);
+  border-left: 3px solid var(--color-primary);
   background-color: var(--bg-surface-card);
   padding: 1.5rem;
   border-radius: 0 6px 6px 0;
