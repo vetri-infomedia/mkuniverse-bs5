@@ -8,10 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
   tooltipTriggerList.map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
-  // State Management for Cart & Wishlist
+  // State Management
   const state = {
-    cart: [],
-    wishlist: new Set(),
     activeFilter: 'all',
     readerFontSize: 18,
     readerTheme: 'ivory'
@@ -183,15 +181,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // DOM Elements
   const navbar = document.querySelector('.navbar-novelia');
-  const cartCountBadge = document.getElementById('cart-count-badge');
-  const wishlistCountBadge = document.getElementById('wishlist-count-badge');
   const booksGrid = document.getElementById('books-grid');
   const filterPills = document.querySelectorAll('.filter-pill');
   const quickViewModal = document.getElementById('quickViewModal');
   const readerModal = document.getElementById('readerModal');
-  const cartModal = document.getElementById('cartModal');
   const newsletterForm = document.getElementById('newsletter-form');
-  const contactForm = document.getElementById('contact-form');
 
   // Navbar Scroll Effect
   window.addEventListener('scroll', () => {
@@ -236,7 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     filtered.forEach(book => {
-      const isWishlisted = state.wishlist.has(book.id);
       const col = document.createElement('div');
       col.className = 'col-md-6 col-lg-4 mb-4';
 
@@ -248,9 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="book-actions-overlay">
               <button class="btn-icon-circle btn-quickview" data-book-id="${book.id}" title="Quick View">
                 <i class="bi bi-eye"></i>
-              </button>
-              <button class="btn-icon-circle btn-wishlist ${isWishlisted ? 'text-danger' : ''}" data-book-id="${book.id}" title="Add to Wishlist">
-                <i class="bi ${isWishlisted ? 'bi-heart-fill' : 'bi-heart'}"></i>
               </button>
             </div>
           </div>
@@ -267,13 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="text-muted ms-1">(${book.reviewsCount})</span>
               </div>
             </div>
-            <div class="row g-2 mt-2">
-              <div class="col-6">
-                <button class="btn btn-novelia-primary w-100 py-2 btn-add-cart" data-book-id="${book.id}">Buy Now</button>
-              </div>
-              <div class="col-6">
-                <button class="btn btn-novelia-outline w-100 py-2 btn-quickview" data-book-id="${book.id}">Details</button>
-              </div>
+            <div class="mt-2">
+              <button class="btn btn-novelia-outline w-100 py-2 btn-quickview" data-book-id="${book.id}">Details</button>
             </div>
           </div>
         </article>
@@ -293,20 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
         openQuickViewModal(bookId);
       });
     });
-
-    document.querySelectorAll('.btn-wishlist').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const bookId = e.currentTarget.getAttribute('data-book-id');
-        toggleWishlist(bookId, e.currentTarget);
-      });
-    });
-
-    document.querySelectorAll('.btn-add-cart').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const bookId = e.currentTarget.getAttribute('data-book-id');
-        addToCart(bookId);
-      });
-    });
   }
 
   // Quick View Modal Population
@@ -324,138 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('qv-book-pages').textContent = `${book.pages} pages`;
     document.getElementById('qv-book-isbn').textContent = book.isbn;
 
-    const modalAddToCartBtn = document.getElementById('qv-add-to-cart-btn');
-    if (modalAddToCartBtn) {
-      modalAddToCartBtn.setAttribute('data-book-id', book.id);
-    }
-
     const bsModal = new bootstrap.Modal(quickViewModal);
     bsModal.show();
-  }
-
-  // Wishlist Toggle
-  function toggleWishlist(bookId, btnElement) {
-    const book = booksData.find(b => b.id === bookId);
-    if (!book) return;
-
-    if (state.wishlist.has(bookId)) {
-      state.wishlist.delete(bookId);
-      showToast(`Removed "${book.title}" from Wishlist`);
-    } else {
-      state.wishlist.add(bookId);
-      showToast(`Added "${book.title}" to Wishlist! ❤️`);
-    }
-
-    // Update Wishlist Badge
-    if (wishlistCountBadge) {
-      wishlistCountBadge.textContent = state.wishlist.size;
-    }
-
-    renderBooksGrid();
-  }
-
-  // Add to Cart
-  function addToCart(bookId, qty = 1) {
-    const book = booksData.find(b => b.id === bookId);
-    if (!book) return;
-
-    const existingIndex = state.cart.findIndex(item => item.id === bookId);
-    if (existingIndex > -1) {
-      state.cart[existingIndex].quantity += qty;
-    } else {
-      state.cart.push({ ...book, quantity: qty });
-    }
-
-    updateCartBadge();
-    showToast(`Added "${book.title}" to Cart! 🛒`);
-  }
-
-  // Update Cart Badge
-  function updateCartBadge() {
-    const totalCount = state.cart.reduce((sum, item) => sum + item.quantity, 0);
-    if (cartCountBadge) {
-      cartCountBadge.textContent = totalCount;
-    }
-  }
-
-  // Render Cart Items Modal
-  function renderCartModal() {
-    const cartContainer = document.getElementById('cart-items-container');
-    const cartTotalElement = document.getElementById('cart-total-price');
-
-    if (!cartContainer) return;
-
-    if (state.cart.length === 0) {
-      cartContainer.innerHTML = `
-        <div class="text-center py-5">
-          <i class="bi bi-cart-x text-muted display-4 mb-3 d-block"></i>
-          <p class="font-serif text-muted fs-5">Your cart is empty.</p>
-        </div>
-      `;
-      if (cartTotalElement) cartTotalElement.textContent = '₹0';
-      return;
-    }
-
-    let html = '<div class="list-group list-group-flush">';
-    let total = 0;
-
-    state.cart.forEach(item => {
-      const itemSubtotal = item.price * item.quantity;
-      total += itemSubtotal;
-
-      html += `
-        <div class="list-group-item bg-transparent border-bottom py-3 d-flex align-items-center justify-content-between gap-3">
-          <img src="${item.cover}" alt="${item.title}" style="width: 50px; height: 70px; object-fit: cover;" class="rounded shadow-sm">
-          <div class="flex-grow-1">
-            <h6 class="font-serif mb-1 text-dark">${item.title}</h6>
-            <small class="text-muted">₹${item.price} x ${item.quantity}</small>
-          </div>
-          <div class="d-flex align-items-center gap-2">
-            <span class="fw-bold text-dark font-sans">₹${itemSubtotal}</span>
-            <button class="btn btn-sm btn-outline-danger btn-remove-cart" data-book-id="${item.id}">
-              <i class="bi bi-trash"></i>
-            </button>
-          </div>
-        </div>
-      `;
-    });
-
-    html += '</div>';
-    cartContainer.innerHTML = html;
-    if (cartTotalElement) cartTotalElement.textContent = `₹${total}`;
-
-    // Attach remove handlers
-    document.querySelectorAll('.btn-remove-cart').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const id = e.currentTarget.getAttribute('data-book-id');
-        state.cart = state.cart.filter(i => i.id !== id);
-        updateCartBadge();
-        renderCartModal();
-      });
-    });
-  }
-
-  // Open Cart Modal Trigger
-  const cartTriggerBtn = document.getElementById('cart-trigger-btn');
-  if (cartTriggerBtn) {
-    cartTriggerBtn.addEventListener('click', () => {
-      renderCartModal();
-      const bsModal = new bootstrap.Modal(cartModal);
-      bsModal.show();
-    });
-  }
-
-  // Quick View Add To Cart Modal Handler
-  const qvAddToCartBtn = document.getElementById('qv-add-to-cart-btn');
-  if (qvAddToCartBtn) {
-    qvAddToCartBtn.addEventListener('click', (e) => {
-      const bookId = e.currentTarget.getAttribute('data-book-id');
-      if (bookId) {
-        addToCart(bookId);
-        const bsModal = bootstrap.Modal.getInstance(quickViewModal);
-        if (bsModal) bsModal.hide();
-      }
-    });
   }
 
   // Story Reader Modal Handler
@@ -518,23 +359,9 @@ document.addEventListener('DOMContentLoaded', () => {
     readerBody.className = `reader-modal-body theme-${state.readerTheme}`;
   }
 
-  // Checkout Demo Button
-  const checkoutBtn = document.getElementById('btn-checkout');
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', () => {
-      if (state.cart.length === 0) {
-        showToast('Your cart is empty!', 'warning');
-        return;
-      }
-      state.cart = [];
-      updateCartBadge();
-      const bsModal = bootstrap.Modal.getInstance(cartModal);
-      if (bsModal) bsModal.hide();
-      showToast('🎉 Order placed successfully! Thank you for supporting Aurelian Press.');
-    });
-  }
 
-  // Forms Handler (Newsletter & Contact)
+
+  // Newsletter Form Handler
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -543,14 +370,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast(`Welcome to the Novelia Reader's Circle, ${email}! ✉️`);
         newsletterForm.reset();
       }
-    });
-  }
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      showToast('Message sent successfully! Our literary team will reply shortly. 🖋️');
-      contactForm.reset();
     });
   }
 
