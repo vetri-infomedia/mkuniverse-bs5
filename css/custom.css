@@ -1,0 +1,162 @@
+@font-face {
+  font-family: "TAU_Elango_Godavari";
+  src:
+    url("../fonts/TAU_Elango_Godavari.woff2") format("woff2"),
+    url("../fonts/TAU_Elango_Godavari.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TAMUni-Tamil150";
+  src:
+    url("../fonts/TAMUni-Tamil150.woff2") format("woff2"),
+    url("../fonts/TAMUni-Tamil150.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TAMUni-Tamil042";
+  src:
+    url("../fonts/TAMUni-Tamil042.woff2") format("woff2"),
+    url("../fonts/TAMUni-Tamil042.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uni Ila.Sundaram-07";
+  src:
+    url("../fonts/Uni Ila.Sundaram-07.woff2") format("woff2"),
+    url("../fonts/Uni Ila.Sundaram-07.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uni Ila.Sundaram-10";
+  src:
+    url("../fonts/Uni Ila.Sundaram-10.woff2") format("woff2"),
+    url("../fonts/Uni Ila.Sundaram-10.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uni Ila.Sundaram-01";
+  src:
+    url("../fonts/Uni Ila.Sundaram-01.woff2") format("woff2"),
+    url("../fonts/Uni Ila.Sundaram-01.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uni Ila.Sundaram-02";
+  src:
+    url("../fonts/Uni Ila.Sundaram-02.woff2") format("woff2"),
+    url("../fonts/Uni Ila.Sundaram-02.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uni Ila.Sundaram-03";
+  src:
+    url("../fonts/Uni Ila.Sundaram-03.woff2") format("woff2"),
+    url("../fonts/Uni Ila.Sundaram-03.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uni Ila.Sundaram-05";
+  src:
+    url("../fonts/Uni Ila.Sundaram-05.woff2") format("woff2"),
+    url("../fonts/Uni Ila.Sundaram-05.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uni Ila.Sundaram-06";
+  src:
+    url("../fonts/Uni Ila.Sundaram-06.woff2") format("woff2"),
+    url("../fonts/Uni Ila.Sundaram-06.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uni Ila.Sundaram-08";
+  src:
+    url("../fonts/Uni Ila.Sundaram-08.woff2") format("woff2"),
+    url("../fonts/Uni Ila.Sundaram-08.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uni Ila.Sundaram-09";
+  src:
+    url("../fonts/Uni Ila.Sundaram-09.woff2") format("woff2"),
+    url("../fonts/Uni Ila.Sundaram-09.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.tamil-head-1 {
+  font-family: "TAU_Elango_Godavari", sans-serif;
+}
+
+.tamil-head-2 {
+  font-family: "TAMUni-Tamil150", sans-serif;
+}
+
+.tamil-head-3 {
+  font-family: "TAMUni-Tamil042", sans-serif;
+}
+
+.tamil-run {
+  font-family: "Uni Ila.Sundaram-07", sans-serif;
+}
+
+.tamil-song-02 {
+  font-family: "Uni Ila.Sundaram-10", sans-serif;
+}
+.tamil-song-01 {
+  font-family: "Uni Ila.Sundaram-01", sans-serif;
+}
+.tamil-unit-title {
+  font-family: "Uni Ila.Sundaram-02", sans-serif;
+}
+.tamil-sub-title {
+  font-family: "Uni Ila.Sundaram-03", sans-serif;
+}
+
+.tamil-chapter-title {
+  font-family: "Uni Ila.Sundaram-05", sans-serif;
+}
+.tamil-style-01 {
+  font-family: "Uni Ila.Sundaram-06", sans-serif;
+}
+
+.tamil-style-02 {
+  font-family: "Uni Ila.Sundaram-08", sans-serif;
+}
+.tamil-style-03 {
+  font-family: "Uni Ila.Sundaram-09", sans-serif;
+}
