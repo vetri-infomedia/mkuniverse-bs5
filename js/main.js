@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
   tooltipTriggerList.map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
+  // Bookstore Featured Price Variable (in Indian Rupees - ₹)
+  let bookstorePrice = 299;
+
+  // Update bookstore section price displays
+  document.querySelectorAll('.bookstore-price-val').forEach(el => {
+    el.textContent = bookstorePrice;
+  });
+
   // State Management
   const state = {
     activeFilter: 'all',
@@ -22,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'The Last Chapter',
       genre: 'Contemporary Fiction',
       category: 'contemporary',
-      price: 499,
+      price: bookstorePrice,
       rating: 4.9,
       reviewsCount: 2420,
       cover: 'images/book_last_chapter.jpg',
