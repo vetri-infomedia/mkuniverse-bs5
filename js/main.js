@@ -485,4 +485,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initial Execution
   renderBooksGrid();
+
+  // WhatsApp Order Modal - open WhatsApp with pre-filled message
+  const orderNowBtn = document.querySelector('[data-bs-target="#whatsappOrderModal"]');
+  if (orderNowBtn) {
+    orderNowBtn.addEventListener('click', () => {
+      const whatsappLink = document.getElementById('whatsapp-order-link');
+      if (whatsappLink) {
+        // Ensure the link is correct (security: use encoded text)
+        whatsappLink.href = 'https://wa.me/919597211397?text=' + encodeURIComponent('I want to order this book. please send the payment link and confirm.');
+      }
+    });
+  }
 });

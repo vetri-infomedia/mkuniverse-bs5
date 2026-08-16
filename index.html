@@ -124,7 +124,7 @@
                 by the author, deleted chapters, signed bookplate, and beautiful interior illustrations.
               </p>
               <div class="d-flex flex-wrap gap-3">
-                <button class="btn btn-novelia-primary py-3 px-4">
+                <button class="btn btn-novelia-primary py-3 px-4" data-bs-toggle="modal" data-bs-target="#whatsappOrderModal">
                   order now
                 </button>
                 <button class="btn btn-novelia-gold py-3 px-4 btn-open-reader" data-story-id="story-1">
@@ -440,7 +440,7 @@
     </div>
   </div>
 
-  <!-- 2. SHORT STORY & EXCERPT READER MODAL -->
+<!-- 2. SHORT STORY & EXCERPT READER MODAL -->
   <div class="modal fade" id="readerModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
       <div class="modal-content border-0 shadow-lg bg-surface">
@@ -475,6 +475,29 @@
     </div>
   </div>
 
+  <!-- 3. WHATSAPP ORDER MODAL -->
+  <div class="modal fade" id="whatsappOrderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg bg-surface">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title font-serif fw-bold text-dark">WhatsApp Payment Gateway</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-lg-5 text-center">
+          <div class="mb-4">
+            <i class="bi bi-whatsapp text-success fs-1"></i>
+          </div>
+          <h6 class="font-serif text-dark mb-3">Order via WhatsApp</h6>
+          <p class="text-muted mb-4">
+            Click below to open WhatsApp with a pre-filled order message. Our team will send you the payment link and confirm your order.
+          </p>
+          <a id="whatsapp-order-link" href="https://wa.me/919597211397?text=I%20want%20to%20order%20this%20book.%20please%20send%20the%20payment%20link%20and%20confirm." target="_blank" class="btn btn-success btn-lg px-5 py-3 rounded-pill">
+            <i class="bi bi-whatsapp me-2"></i> Continue to WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <!-- Bootstrap 5 JavaScript Bundle with Popper CDN -->
