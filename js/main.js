@@ -498,15 +498,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Video Players - Mutual Pause Handling
+  // Video Players - Mutual Pause & Active State Handling
   const videoElements = document.querySelectorAll('video');
   videoElements.forEach(video => {
+    const wrapper = video.closest('.video-player-wrapper');
+
     video.addEventListener('play', () => {
+      if (wrapper) wrapper.classList.add('is-playing');
       videoElements.forEach(otherVideo => {
         if (otherVideo !== video && !otherVideo.paused) {
           otherVideo.pause();
         }
       });
+    });
+
+    video.addEventListener('pause', () => {
+      if (wrapper) wrapper.classList.remove('is-playing');
+    });
+
+    video.addEventListener('ended', () => {
+      if (wrapper) wrapper.classList.remove('is-playing');
     });
   });
 

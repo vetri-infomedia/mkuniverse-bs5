@@ -319,6 +319,8 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  max-width: 420px;
+  width: 100%;
 }
 
 .video-showcase-card:hover {
@@ -335,15 +337,20 @@ body {
   overflow: hidden;
   width: 100%;
   aspect-ratio: 9 / 16;
+  max-height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
+  isolation: isolate;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  margin: 0 auto;
 }
 
 .video-player-wrapper video {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  max-height: 100%;
+  object-fit: cover;
   display: block;
   background: #0b0512;
 }
@@ -359,7 +366,7 @@ body {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  z-index: 5;
+  z-index: 10;
   display: inline-flex;
   align-items: center;
   width: auto !important;
@@ -367,7 +374,7 @@ body {
   max-width: max-content;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  background: rgba(43, 18, 64, 0.82);
+  background: rgba(43, 18, 64, 0.85);
   border: 1px solid rgba(196, 164, 124, 0.45);
   color: #ffddb4;
   font-size: 0.72rem;
@@ -375,6 +382,14 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   pointer-events: none;
+  transform: translateZ(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.video-player-wrapper.is-playing .video-badge-floating {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
 }
 
 .video-feature-pill {
@@ -791,8 +806,21 @@ footer a:hover {
     padding-right: 1rem;
   }
 
+  .video-showcase-card {
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1rem;
+  }
+
+  .video-player-wrapper {
+    max-height: 420px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
   .video-card-body {
-    padding: 1.25rem;
+    padding: 1.25rem 1rem;
   }
 
   .video-badge-floating {
@@ -800,5 +828,17 @@ footer a:hover {
     left: 0.75rem;
     font-size: 0.65rem;
     padding: 0.3rem 0.6rem !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .video-showcase-card {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .video-player-wrapper {
+    max-height: 460px;
   }
 }
