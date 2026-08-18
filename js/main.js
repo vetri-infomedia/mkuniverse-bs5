@@ -497,4 +497,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Video Players - Mutual Pause Handling
+  const videoElements = document.querySelectorAll('video');
+  videoElements.forEach(video => {
+    video.addEventListener('play', () => {
+      videoElements.forEach(otherVideo => {
+        if (otherVideo !== video && !otherVideo.paused) {
+          otherVideo.pause();
+        }
+      });
+    });
+  });
+
+  // Pause videos when modals open
+  const allModals = document.querySelectorAll('.modal');
+  allModals.forEach(modal => {
+    modal.addEventListener('show.bs.modal', () => {
+      videoElements.forEach(video => {
+        if (!video.paused) {
+          video.pause();
+        }
+      });
+    });
+  });
 });
