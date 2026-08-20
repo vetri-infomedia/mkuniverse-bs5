@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Novelia - Author & Bookstore Portfolio
  * Interactive JavaScript powered by Bootstrap 5
  */
@@ -533,6 +533,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // WhatsApp Pre-Order Modal - Seyon 2
+  const preOrderBtns = document.querySelectorAll(
+    '[data-bs-target="#whatsappPreOrderModal"]',
+  );
+  preOrderBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const preorderLink = document.getElementById("whatsapp-preorder-link");
+      if (preorderLink) {
+        preorderLink.href =
+          "https://wa.me/919597211397?text=" +
+          encodeURIComponent(
+            "Hello, I would like to pre-order Seyon 2 (சேயோன் 2 - குறிஞ்சியும் நெய்தலும்). Please share the pre-order details and confirmation.",
+          );
+      }
+    });
+  });
 
   // Video Players - Mutual Pause & Active State Handling
   const videoElements = document.querySelectorAll("video");
