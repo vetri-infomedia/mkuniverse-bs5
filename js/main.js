@@ -144,29 +144,32 @@ document.addEventListener("DOMContentLoaded", () => {
       excerpt:
         "வேகமாக சென்ற லாரியின் காற்றால் பறந்த ஒரு தேநீர் கடையின் பில்... அதில் எழுதப்பட்ட '586' என்ற மர்ம எண்...",
       content: `
-        <iframe src="pdf/vidhiyen-586.pdf" width="100%" height="700px" style="border: none;"></iframe>
+        <embed src="pdf/vidhiyen-586.pdf" type="application/pdf" width="100%" height="700px" style="min-height: 75vh; border: none; border-radius: 8px;"></embed>
+      `
+    },
+    {
+      id: "story-seyon",
+      title: "சேயோன் — மாதிரிப் பகுதி (Sample Excerpt)",
+      category: "Tamil Novel Excerpt",
+      readTime: "10 min read",
+      date: "August 2026",
+      excerpt:
+        "பண்டையத் தமிழர் மரபு, அதிநவீன அறிவியல் மற்றும் அவிழ்க்க முடியாத புதிர்கள் சங்கமிக்கும் புதியதோர் உலகம். ‘சேயோன்’ பிரம்மாண்ட நாவலின் மாதிரிப் பகுதி.",
+      content: `
+        <embed src="pdf/seyon.pdf" type="application/pdf" width="100%" height="700px" style="min-height: 75vh; border: none; border-radius: 8px;"></embed>
       `
     },
     {
       id: "story-1",
-      title: "The Clockmaker's Secret",
-      category: "Historical Fiction",
-      readTime: "6 min read",
+      title: "சேயோன் — மாதிரிப் பகுதி (Sample Excerpt)",
+      category: "Tamil Novel Excerpt",
+      readTime: "10 min read",
       date: "August 2026",
       excerpt:
-        "In the quiet town of Prague, an aging horologist guards a pocket watch that doesn't measure hours, but moments of true clarity...",
+        "பண்டையத் தமிழர் மரபு, அதிநவீன அறிவியல் மற்றும் அவிழ்க்க முடியாத புதிர்கள் சங்கமிக்கும் புதியதோர் உலகம். ‘சேயோன்’ பிரம்மாண்ட நாவலின் மாதிரிப் பகுதி.",
       content: `
-        <h4 class="font-serif mb-4 text-center">The Clockmaker’s Secret</h4>
-        <p class="lead italic text-center mb-5 text-muted">"Time is not a stream that flows away, but an ocean that surrounds us."</p>
-        
-        <p>Master Josef sat at his heavy oak workbench, his magnifying loupe pressed tight against his right orbit. The brass gears before him were no larger than sesame seeds, yet each teeth had been filed by hand in the winters of 1912.</p>
-        
-        <p>Outside his window, the snow began to fall over Prague’s Old Town Square. The famous astronomical clock chimed seven heavy beats into the freezing air. Josef did not look up. His focus was fixed on a small silver chronometer that bore no hands upon its porcelain face.</p>
-        
-        <p>For forty years, collectors had traveled from Vienna and London trying to purchase the handless watch. They called it Josef's madness. But to those who knew how to listen, the watch did not measure seconds. When wound thrice with a rose-gold key, its ticking matched the heartbeat of whoever held it, slowing down during moments of stillness, accelerating in anger or passion.</p>
-        
-        <p>"A clock should tell you how much life you have felt, not how much you have lost," Josef whispered to the quiet room, setting his fine tweezers down.</p>
-      `,
+        <embed src="pdf/seyon.pdf" type="application/pdf" width="100%" height="700px" style="min-height: 75vh; border: none; border-radius: 8px;"></embed>
+      `
     },
     {
       id: "story-2",
