@@ -118,6 +118,16 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "ATM 171";
+  src:
+    url("../fonts/ATM 171.woff2") format("woff2"),
+    url("../fonts/ATM 171.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .tamil-head-1 {
   font-family: "TAU_Elango_Godavari", sans-serif;
 }
@@ -134,15 +144,24 @@
   font-family: "Uni Ila.Sundaram-07", sans-serif;
 }
 
+.tamil-run-1 {
+  font-family: "ATM 171", sans-serif;
+  font-size: 1.25em;
+  line-height: 1.6;
+}
+
 .tamil-song-02 {
   font-family: "Uni Ila.Sundaram-10", sans-serif;
 }
+
 .tamil-song-01 {
   font-family: "Uni Ila.Sundaram-01", sans-serif;
 }
+
 .tamil-unit-title {
   font-family: "Uni Ila.Sundaram-02", sans-serif;
 }
+
 .tamil-sub-title {
   font-family: "Uni Ila.Sundaram-03", sans-serif;
 }
